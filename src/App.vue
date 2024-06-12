@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HeaderComponent />
+    <WelcomeComponent />
+    <DifferencesComponent items="data" />
+    <UploadFile />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WelcomeComponent from './components/WelcomeComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
+import DifferencesComponent from './components/DifferencesComponent.vue'
+import UploadFile from './components/UploadFile.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WelcomeComponent,
+    HeaderComponent,
+    DifferencesComponent,
+    UploadFile
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

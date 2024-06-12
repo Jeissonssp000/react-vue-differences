@@ -1,0 +1,26 @@
+[
+  {
+    "id": "id1",
+    "title": "¿Cómo usar CSS?",
+    "img": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*G-4Z_ZSVVdA0BNuZYNnKsw.png",
+    "description": "El código CSS para ambas aplicaciones es exactamente el mismo, pero hay diferencias en el lugar donde se encuentran. Con eso en mente, como vemos en la imágen la estructura de archivos de ambas aplicaciones"
+  },
+  {
+    "id": "id2",
+    "title": "¿Cómo mutamos los datos?",
+    "img": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mwDfvph3P7KcFwxDzXylHg.png",
+    "description": "Pero primero, ¿qué queremos decir con “mutar los datos”? Suena un poco técnico ¿no? Básicamente solo significa cambiar los datos que hemos almacenado. Entonces, si quisiéramos cambiar el valor del nombre de una persona de John a Mark, estaríamos “mutando los datos”. Así que aquí es donde radica una diferencia clave entre React y Vue. Mientras que Vue esencialmente crea un objeto de datos, donde los datos se pueden actualizar libremente, React crea un objeto de estado, donde se requiere un poco más de trabajo para realizar las actualizaciones. Ahora React implementa el trabajo extra por una buena razón, y nos ocuparemos de eso en un momento."
+  },
+  {
+    "id": "id3",
+    "title": "¿Cómo mutamos los datos?",
+    "img": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mwDfvph3P7KcFwxDzXylHg.png",
+    "description": "Pero primero, ¿qué queremos decir con “mutar los datos”? Suena un poco técnico ¿no? Básicamente solo significa cambiar los datos que hemos almacenado. Entonces, si quisiéramos cambiar el valor del nombre de una persona de John a Mark, estaríamos “mutando los datos”. Así que aquí es donde radica una diferencia clave entre React y Vue. Mientras que Vue esencialmente crea un objeto de datos, donde los datos se pueden actualizar libremente, React crea un objeto de estado, donde se requiere un poco más de trabajo para realizar las actualizaciones. Ahora React implementa el trabajo extra por una buena razón, y nos ocuparemos de eso en un momento."
+  },
+  {
+    "id": "id4",
+    "title": "¿Cómo mutamos los datos?",
+    "img": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mwDfvph3P7KcFwxDzXylHg.png",
+    "description": "Pero primero, ¿qué queremos decir con “mutar los datos”? Suena un poco técnico ¿no? Básicamente solo significa cambiar los datos que hemos almacenado. Entonces, si quisiéramos cambiar el valor del nombre de una persona de John a Mark, estaríamos “mutando los datos”. Así que aquí es donde radica una diferencia clave entre React y Vue. Mientras que Vue esencialmente crea un objeto de datos, donde los datos se pueden actualizar libremente, React crea un objeto de estado, donde se requiere un poco más de trabajo para realizar las actualizaciones. Ahora React implementa el trabajo extra por una buena razón, y nos ocuparemos de eso en un momento."
+  }
+]

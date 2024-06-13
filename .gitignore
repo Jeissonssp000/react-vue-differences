@@ -33,6 +33,7 @@ node_modules
 /.nyc_output
 firebase-debug.log
 firebase-debug.*.log
+firestore-debug.log
 npm-debug.log
 ui-debug.log
 yarn.lock

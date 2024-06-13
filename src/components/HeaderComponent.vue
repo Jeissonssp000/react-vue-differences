@@ -1,12 +1,13 @@
 <template>
   <header class="fw center sticky">
     <nav class="max-1200 justify-between align-center fw pad">
-      <img alt="Vue logo" src="../assets/logo.png">
-      <ul class="flex gap max-width">
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#differences">Diferencias</a></li>
-        <li><a href="#upload">Cargar archivo</a></li>
-      </ul>
+      <router-link to="/">
+        <img alt="Vue logo" src="../assets/logo.png">
+      </router-link>
+      <div class="flex gap max-width">
+        <router-link to="/">Inicio</router-link>
+        <router-link to="/upload">Cargar archivo</router-link>
+      </div>
     </nav>
   </header>
 </template>
@@ -19,11 +20,7 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  list-style-type: none;
-}
-
 img {
-  height: 20px
+  height: 50px
 }
 </style>

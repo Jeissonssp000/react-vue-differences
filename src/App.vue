@@ -1,25 +1,31 @@
 <template>
   <div id="app">
     <HeaderComponent />
-    <WelcomeComponent />
-    <DifferencesComponent items="data" />
-    <UploadFile />
+    <router-view></router-view>
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-import WelcomeComponent from './components/WelcomeComponent.vue'
 import HeaderComponent from './components/HeaderComponent.vue'
-import DifferencesComponent from './components/DifferencesComponent.vue'
-import UploadFile from './components/UploadFile.vue'
+import FooterComponent from './components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    WelcomeComponent,
     HeaderComponent,
-    DifferencesComponent,
-    UploadFile
+    FooterComponent
   }
 }
 </script>
+
+<style scoped>
+#app {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  display: flex;
+  justify-content: space-between;
+}
+</style>

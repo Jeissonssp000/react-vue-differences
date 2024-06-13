@@ -9,6 +9,14 @@
     <ul v-if="item.list">
       <li v-for="(listItem, index) in item.list" :key="index">{{ listItem }}</li>
     </ul>
+    <h4 v-if="item.vueCode">Código en Vue</h4>
+    <small v-if="item.vueCode">
+      <pre>{{ item.vueCode }}</pre>
+    </small>
+    <h4 v-if="item.reactCode">Código en React</h4>
+    <small v-if="item.reactCode">
+      <pre>{{ item.reactCode }}</pre>
+    </small>
   </div>
 </template>
 

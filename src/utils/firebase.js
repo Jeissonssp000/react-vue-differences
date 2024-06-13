@@ -20,7 +20,7 @@ if (window.location.hostname === "localhost") {
     ssl: false
   });
   firebase.auth().useEmulator("http://localhost:9099");
-  firebase.storage().useEmulator("http://localhost:9199");
+  // firebase.storage().useEmulator("http://localhost:9199");
 }
 
 const db = firebase.firestore();

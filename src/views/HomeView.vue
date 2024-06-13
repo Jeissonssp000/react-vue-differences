@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="vertical align-center" style="width: 100%;">
     <WelcomeComponent />
     <DifferencesComponent />
   </div>

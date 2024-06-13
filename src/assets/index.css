@@ -87,9 +87,7 @@ html {
 
 ul {
   padding: 5px;
-  overflow: hidden;
-  max-height: 200px;
-  list-style-type: none;
+  margin-left: 30px;
 }
 
 b {
@@ -102,9 +100,9 @@ a {
 }
 
 .card {
-  -webkit-box-shadow: 3px 3px 5px 0px rgba(201, 201, 201, 1);
-  -moz-box-shadow: 3px 3px 5px 0px rgba(201, 201, 201, 1);
-  box-shadow: 3px 3px 5px 0px rgba(201, 201, 201, 1);
+  -webkit-box-shadow: 2px 2px 7px 0px rgba(201, 201, 201, 1);
+  -moz-box-shadow: 2px 2px 7px 0px rgba(201, 201, 201, 1);
+  box-shadow: 2px 2px 7px 0px rgba(201, 201, 201, 1);
   background: rgb(255 248 248);
 }
 
@@ -190,8 +188,7 @@ select,
   color: black;
 }
 
-select,
-.card {
+select {
   border: 1px gray solid;
   backdrop-filter: blur(5px) brightness(0.7);
 }
@@ -288,24 +285,10 @@ section.pad {
   }
 }
 
-.login {
-  height: 90vh;
-}
-
-.list {
-  padding-right: 10px;
-  min-height: 250px;
-  max-height: 100%;
-}
-
 button,
 select,
 .cursor {
   cursor: pointer;
-}
-
-.counter {
-  padding-inline: 5px;
 }
 
 .fixed {
@@ -335,10 +318,6 @@ header {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-}
-
-.separator {
-  height: 1px;
 }
 
 .modal_container {

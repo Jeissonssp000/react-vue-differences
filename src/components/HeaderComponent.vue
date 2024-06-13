@@ -19,6 +19,10 @@ export default {
 </script>
 
 <style scoped>
+ul {
+  list-style-type: none;
+}
+
 img {
   height: 20px
 }

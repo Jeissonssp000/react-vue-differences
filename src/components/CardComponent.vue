@@ -1,8 +1,11 @@
 <template>
   <div class="card vertical gap">
-    <img class="cursor" :src="item.img" :alt="item.title">
+    <img v-if="item.img" class="cursor" :src="item.img" :alt="item.title">
     <h3 class="center">{{ item.title }}</h3>
-    <p>{{ item.description }}</p>
+    <p v-for="(text, index) in item.description" :key="index">{{ text }}</p>
+    <ul v-if="item.list">
+      <li v-for="(listItem, index) in item.list" :key="index">{{ listItem }}</li>
+    </ul>
   </div>
 </template>
 

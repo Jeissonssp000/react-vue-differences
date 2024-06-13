@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="vertical gap pad">
+  <section id="home" class="max-1200 vertical gap pad">
     <h1>Comparativas.com</h1>
     <p>
       ¡Bienvenido a Comparativas.com! Tu destino definitivo para explorar, comparar y decidir sobre las últimas

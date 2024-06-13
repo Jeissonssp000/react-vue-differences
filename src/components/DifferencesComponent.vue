@@ -1,5 +1,5 @@
 <template>
-  <section id="differences" class="gallery pad gap">
+  <section id="differences" class="gallery pad gap max-1200">
     <CardComponent v-for="item in items" :key="item.id" :item="item" />
   </section>
 </template>

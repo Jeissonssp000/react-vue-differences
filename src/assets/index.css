@@ -27,6 +27,7 @@ html {
   grid-auto-flow: dense;
 }
 
+#app,
 .flex,
 .vertical,
 .align-center,
@@ -47,11 +48,13 @@ html {
   }
 }
 
+#app,
 .center,
 .vertical {
   flex-direction: column;
 }
 
+#app,
 .center,
 .align-center {
   align-items: center;
@@ -212,8 +215,9 @@ select,
   max-width: 370px;
 }
 
-.max-800 {
-  max-width: 800px !important;
+.max-1200 {
+  max-width: 1200px;
+  width: 100%;
 }
 
 button,
@@ -318,10 +322,13 @@ select,
 
 .sticky {
   position: sticky;
-  background: rgb(255 233 233);
   z-index: 2;
   left: 0px;
   top: 0px;
+}
+
+header {
+  background: rgb(255 233 233);
 }
 
 .ellipsis {

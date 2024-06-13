@@ -1,7 +1,7 @@
 html {
   --primary: rgb(32, 32, 32);
   --secondary: rgb(225, 225, 225);
-  --background: whitesmoke;
+  --background: white;
   --selected: rgb(196, 196, 196);
 }
 

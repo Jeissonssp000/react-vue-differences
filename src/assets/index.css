@@ -1,6 +1,6 @@
 html {
   --primary: rgb(32, 32, 32);
-  --secondary: rgb(225, 225, 225);
+  --secondary: rgb(255, 160, 160);
   --background: white;
   --selected: rgb(196, 196, 196);
 }
@@ -187,11 +187,12 @@ select {
   padding-right: 6px;
 }
 
-.max-250 {
-  max-width: 250px;
+.max-800 {
+  max-width: 800px;
+  width: 100%;
 }
 
-.w-370 {
+.max-370 {
   width: 100%;
   max-width: 370px;
 }
@@ -306,15 +307,15 @@ footer {
 }
 
 .modal_container {
-  position: fixed;
   width: 100vw;
   height: 100vh;
   padding: 50px 10px;
+  top: 0px;
+  left: 0px;
   background: rgba(0, 0, 0, 0.7);
   z-index: 5;
 
   .modal {
-    max-width: 95%;
     max-height: 80%;
     overflow: auto;
   }

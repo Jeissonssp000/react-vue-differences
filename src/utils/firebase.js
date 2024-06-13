@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAsWVf6zrzwHyvpDud9gwgjSKYrkPiliys",
@@ -13,18 +14,21 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-export const auth = firebase.auth();
+const auth = firebase.auth();
+export const storageRef = firebase.storage().ref();
 
 export const logIn = (pass, callback) => {
-  e.preventDefault();
   auth.signInWithEmailAndPassword("demo@gmail.com", pass)
     .then(() => callback(true))
     .catch(() => callback(false))
 };
 
-const snapDoc = (col, doc, setter) => db
-  .collection(col)
-  .doc(doc)
-  .onSnapshot((doc) => setter(doc.data() || false))
+const snapDocs = (col, setter) => {
+  return db.collection(col).onSnapshot((snapshot) => {
+    const list = [];
+    snapshot.forEach(doc => list.push(doc.data()));
+    setter(list);
+  });
+};
 
-export const getLastFileContain = (setter) => snapDoc("files", "lastFile", setter)
+export const getFiles = (setter) => snapDocs("files", setter)

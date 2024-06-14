@@ -21,16 +21,18 @@ exports.fileUploadAndUnzip = function (req, res, next) {
   });
 
   busboy.on("file", (fieldname, file, filename, encoding, mimetype) => {
+    console.log("Archivo cargado");
     const filepath = path.join(tmpdir, filename);
     const writeStream = fs.createWriteStream(filepath);
     file.pipe(writeStream);
-
+    
     writeStream.on("finish", () => {
       writeStream.close(async () => {
         const unzipDir = path.join(tmpdir, `${path.basename(filename, path.extname(filename))}_${uuidv4()}`);
         if (!fs.existsSync(unzipDir)) {
           fs.mkdirSync(unzipDir);
         }
+        console.log("Archivo descompreso");
 
         fs.createReadStream(filepath)
           .pipe(unzipper.Extract({ path: unzipDir }))

@@ -64,9 +64,11 @@ export default {
       Log(filePath)
       const storage = getStorage();
       const fileRef = ref(storage, filePath);
+      Log("Archivo descargandose")
       try {
         const url = await getDownloadURL(fileRef);
         window.open(url, '_blank');
+        Log("Archivo descargado")
       } catch (error) {
         console.error("Error al obtener la URL de descarga", error);
       }

@@ -7,7 +7,7 @@
     <h2 class="pad">Lista de Archivos</h2>
     <div class="vertical gap pad scroll" style="max-height: 300px;">
       <div class="card flex gap align-center" v-for="file in files" :key="file.name">
-        <button @click.prevent="promptPassword(file.path, file.name)">Descargar</button>
+        <button @click.prevent="promptPassword(file.url, file.name)">Descargar</button>
         <span class="fw ellipsis">{{ file.name }}</span>
       </div>
     </div>
@@ -62,6 +62,7 @@ export default {
       this.file = event.target.files[0];
     },
     async downloadFile(filePath) {
+      Log(filePath)
       const storage = getStorage();
       const fileRef = ref(storage, filePath);
       try {

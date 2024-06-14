@@ -29,9 +29,8 @@ import { Log } from '@/utils/logsHandler';
 import { getFiles, logIn } from '../utils/firebase';
 import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 
-// const apiUrl = process.env.VUE_APP_DEV ? "http://localhost:3000" : "url producción pendiente"
-const apiUrl = process.env.VUE_APP_DEV ? "http://127.0.0.1:5001/playground-dyd/us-central1/api" : "url producción pendiente"
-Log(apiUrl);
+const apiUrl = process.env.VUE_APP_DEV === 'true' ? "http://127.0.0.1:5001/playground-dyd/us-central1/api" : "https://api-knn7snbyhq-uc.a.run.app"
+console.log(process.env.VUE_APP_DEV === 'true' ? "desarrollo" : "producción");
 export default {
   name: "UploadFile",
   data() {

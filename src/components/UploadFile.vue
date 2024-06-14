@@ -25,8 +25,13 @@
 </template>
 
 <script>
-import { getFiles, logIn, storageRef } from '../utils/firebase';
-const apiUrl = "http://127.0.0.1:5001/playground-dyd/us-central1/api"
+import { Log } from '@/utils/logsHandler';
+import { getFiles, logIn } from '../utils/firebase';
+import { getDownloadURL, getStorage, ref } from 'firebase/storage';
+
+// const apiUrl = process.env.VUE_APP_DEV ? "http://localhost:3000" : "url producción pendiente"
+const apiUrl = process.env.VUE_APP_DEV ? "http://127.0.0.1:5001/playground-dyd/us-central1/api" : "url producción pendiente"
+Log(apiUrl);
 export default {
   name: "UploadFile",
   data() {
@@ -57,9 +62,10 @@ export default {
       this.file = event.target.files[0];
     },
     async downloadFile(filePath) {
-      const fileRef = storageRef.child(filePath);
+      const storage = getStorage();
+      const fileRef = ref(storage, filePath);
       try {
-        const url = await fileRef.getDownloadURL();
+        const url = await getDownloadURL(fileRef);
         window.open(url, '_blank');
       } catch (error) {
         console.error("Error al obtener la URL de descarga", error);
@@ -93,7 +99,7 @@ export default {
       }
 
       const formData = new FormData();
-      formData.append('zipFile', this.file);
+      formData.append('file', this.file);
 
       try {
         const response = await fetch(`${apiUrl}/upload`, {
@@ -101,14 +107,15 @@ export default {
           body: formData,
         });
 
+        Log(response);
         if (!response.ok) {
-          throw new Error('Error en la subida del archivo');
+          throw new Error('Error en la subida del archivo: ' + response.statusText);
         }
 
         const result = await response.json();
-        console.log(result);
+        Log(result);
       } catch (error) {
-        console.error('Error:', error);
+        Error(error)
       }
     },
   },

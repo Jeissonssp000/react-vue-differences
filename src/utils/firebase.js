@@ -1,8 +1,7 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
-import "firebase/storage";
-
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, onSnapshot, connectFirestoreEmulator } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword, connectAuthEmulator } from "firebase/auth";
+import { getStorage, ref, connectStorageEmulator } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDvpElgq7_vTMzKHYmTH2YEB4lQGT-qkbQ",
@@ -13,31 +12,35 @@ const firebaseConfig = {
   messagingSenderId: "897789558467",
   appId: "1:897789558467:web:69aac8c4cdf459e8f4ec76",
   measurementId: "G-KY3DFXS2V6"
-}
+};
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+const auth = getAuth(app);
+const storage = getStorage(app);
 
 if (window.location.hostname === "localhost") {
-  firebase.firestore().settings({ host: "localhost:5010", ssl: false });
-  firebase.auth().useEmulator("http://localhost:9099");
+  console.log("caution: develop config may give problems");
+  connectFirestoreEmulator(db, "localhost", 5010)
+  connectAuthEmulator(auth, "http://localhost:9099");
+  connectStorageEmulator(storage, "localhost", 9199);
 }
 
-const db = firebase.firestore();
-const auth = firebase.auth();
-export const storageRef = firebase.storage().ref();
+export const storageRef = ref(storage);
 
 export const logIn = (pass, callback) => {
-  auth.signInWithEmailAndPassword("demo@gmail.com", pass)
+  signInWithEmailAndPassword(auth, "demo@gmail.com", pass)
     .then(() => callback(true))
-    .catch(() => callback(false))
+    .catch(() => callback(false));
 };
 
 const snapDocs = (col, setter) => {
-  return db.collection(col).onSnapshot((snapshot) => {
+  return onSnapshot(collection(db, col), (snapshot) => {
     const list = [];
     snapshot?.forEach(doc => list.push(doc.data()));
     setter(list);
   });
 };
 
-export const getFiles = (setter) => snapDocs("files", setter)
+export const getFiles = (setter) => snapDocs("files", setter);

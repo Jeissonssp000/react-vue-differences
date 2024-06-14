@@ -47,5 +47,11 @@
         "*.local"
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/upload",
+      "function": "api"
+    }
   ]
 }

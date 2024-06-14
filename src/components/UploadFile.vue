@@ -26,7 +26,7 @@
 
 <script>
 import { getFiles, logIn, storageRef } from '../utils/firebase';
-
+const apiUrl = "http://127.0.0.1:5001/playground-dyd/us-central1/api"
 export default {
   name: "UploadFile",
   data() {
@@ -96,7 +96,7 @@ export default {
       formData.append('zipFile', this.file);
 
       try {
-        const response = await fetch('http://localhost:3000/upload', {
+        const response = await fetch(`${apiUrl}/upload`, {
           method: 'POST',
           body: formData,
         });

@@ -3,24 +3,23 @@ import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAsWVf6zrzwHyvpDud9gwgjSKYrkPiliys",
-  authDomain: "react-vue-differences.firebaseapp.com",
-  projectId: "react-vue-differences",
-  storageBucket: "react-vue-differences.appspot.com",
-  messagingSenderId: "45443550946",
-  appId: "1:45443550946:web:1037c77c739cb5a306d8bb"
-};
+  apiKey: "AIzaSyDvpElgq7_vTMzKHYmTH2YEB4lQGT-qkbQ",
+  authDomain: "playground-dyd.firebaseapp.com",
+  databaseURL: "https://playground-dyd.firebaseio.com",
+  projectId: "playground-dyd",
+  storageBucket: "playground-dyd.appspot.com",
+  messagingSenderId: "897789558467",
+  appId: "1:897789558467:web:69aac8c4cdf459e8f4ec76",
+  measurementId: "G-KY3DFXS2V6"
+}
 
 firebase.initializeApp(firebaseConfig);
 
 if (window.location.hostname === "localhost") {
-  firebase.firestore().settings({
-    host: "localhost:5010",
-    ssl: false
-  });
+  firebase.firestore().settings({ host: "localhost:5010", ssl: false });
   firebase.auth().useEmulator("http://localhost:9099");
-  // firebase.storage().useEmulator("http://localhost:9199");
 }
 
 const db = firebase.firestore();
@@ -36,7 +35,7 @@ export const logIn = (pass, callback) => {
 const snapDocs = (col, setter) => {
   return db.collection(col).onSnapshot((snapshot) => {
     const list = [];
-    snapshot.forEach(doc => list.push(doc.data()));
+    snapshot?.forEach(doc => list.push(doc.data()));
     setter(list);
   });
 };

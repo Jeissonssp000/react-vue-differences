@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "react-vue-differences"
-  }
+    "default": "playground-dyd",
+    "playground": "playground-dyd"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
